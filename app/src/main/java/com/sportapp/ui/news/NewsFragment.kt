@@ -47,6 +47,7 @@ class NewsFragment : Fragment() {
     private fun observe() {
         viewModel.loading.observe(viewLifecycleOwner) {
             binding.swipeRefresh.isRefreshing = it
+            binding.swipeRefresh.isRefreshing = false
         }
         viewModel.actionState.observe(viewLifecycleOwner) {
             if (it.isConsumed) {
